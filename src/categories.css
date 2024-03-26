@@ -1,0 +1,89 @@
+.categories {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 10px;
+    width: 20%;
+    background-color: white;
+}
+
+/* Stilizare pentru fiecare categorie */
+.categories ul {
+    list-style: none;
+    padding: 0;
+}
+
+.categories li {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 8px;
+    padding-top: 20px;
+    margin-bottom: 8px;
+}
+
+/* Stilizare pentru butonul de adăugare categorie */
+.add-category-button {
+    background: white;
+    border: none;
+    color: gray;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.add-category-button::before {
+    content: '+';
+    margin-right: 5px;
+}
+.confirm-add-category-button{
+    border: none;
+    background: #6497b1;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.cancel-add-category-button{
+    border: none;
+    background: transparent;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.category-name-textbox{
+    color: black;
+    padding: 10px;
+    width: 90%;
+    border: 1px solid black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.delete-category-button{
+    color: #1e0408;
+    border: none;
+    font-size: 16px;
+    float: right;
+    cursor: pointer;
+}

@@ -1,0 +1,53 @@
+.priority-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.priority-button {
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.priority-button:hover {
+    background-color: #f0f0f0;
+}
+
+.priority-button.selected {
+    color: #fff;
+    border: 3px solid #000;
+    /* Add a border to make it more evident */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* Add a subtle box shadow for depth */
+}
+
+.priority-button:hover {
+    background-color: #f0f0f0;
+}
+
+:root {
+    --theme-color: lightblue;
+}
+
+.priority-button.low {
+    background: linear-gradient(to right, green, var(--theme-color));
+    color: #fff;
+}
+
+.priority-button.medium {
+    background: linear-gradient(to right, #f39c12, var(--theme-color));
+    color: #fff;
+}
+.addcancelbuttons{
+    margin-top: 10px;
+}
+
+.priority-button.high {
+    background: linear-gradient(to right, red, var(--theme-color));
+    color: #fff;
+}

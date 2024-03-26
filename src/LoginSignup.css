@@ -1,0 +1,93 @@
+/* Stilizare pentru containerul formularului */
+
+
+body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+
+}
+
+/* Stilizare pentru formular */
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+/* Stilizare pentru inputurile din formular */
+input {
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.container {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container h2 {
+    font-size: 2em;
+    text-align: center;
+    color: #005b96;
+}
+
+.inputbox {
+    position: relative;
+    width: 100%;
+    height: 20%;
+    border-bottom: 2px solid #005b96;
+    margin: 20px 0;
+}
+
+
+.inputbox input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #03396c;
+    font-weight: 700;
+    padding: 0 35px 0 5px;
+}
+
+.loginbtn {
+    width: 100%;
+    height: 45px;
+    background: #6497b1;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.reglog {
+    font-size: .9em;
+    color: #005b96;
+    font-weight: 500;
+    margin: 15px 0 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reglog button {
+    background: none;
+    border: none;
+    color: 	#011f4b;
+}
+.reglog button:hover {
+    text-decoration: underline;
+}

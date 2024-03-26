@@ -1,0 +1,351 @@
+/* For laptops/desktops */
+body {
+  background: rgb(193, 227, 239);
+  margin: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.top-bar {
+  background-color: #c1dddf;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 10;
+}
+
+.charter-title {
+  font-weight: bold;
+  font-size: 35px;
+  margin: 0;
+  position: relative;
+  top: 16px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.left-section {
+  position: absolute;
+  display: flex;
+  top: 11%;
+  left: 2%;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+  margin-right: 30px;
+}
+
+.button {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-left: 0%;
+  margin-right: 40px;
+  padding: 8px 16px;
+  border: none;
+  background-color: rgb(201, 201, 201);
+  color: rgb(63, 63, 63);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #f0f0f0;
+}
+
+.settings-button {
+  padding: 8px 16px;
+  border: none;
+  background-color: transparent;
+  font-size: 25px;
+  color: #333;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: rgb(201, 201, 201);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.dropdown-menu li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f5f5f5;
+}
+
+
+/*FEEDBACK*/
+
+/* ... other existing styles ... */
+
+/* Feedback Popup */
+.feedback-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.feedback-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  /* Adjust as needed */
+}
+
+.feedback-content h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.feedback-content textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 15px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.feedback-content button {
+  padding: 8px 20px;
+  background-color: #c9c9c9;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.feedback-content button:hover {
+  background-color: #555;
+}
+
+
+/* END FEEDBACK*/
+
+
+/* For mobile */
+@media screen and (max-width: 768px) {
+  .top-bar {
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .left-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    position: static;
+  }
+
+  .logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+  }
+
+  .charter-title {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .right-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .button {
+    margin: 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: rgb(201, 201, 201);
+    color: rgb(63, 63, 63);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: #f0f0f0;
+  }
+
+  .settings-button {
+    font-size: 20px;
+    padding: 5px 10px;
+    background-color: #eef9f0;
+    color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+
+  /*START FILTERS*/
+  .dropdown-menu1 {
+    position: absolute;
+    top: 100px;
+    right: 42%;
+  }
+
+  .dropdown-menu1 ul {
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .dropdown-menu2 {
+    position: absolute;
+    top: 100px;
+    right: 60%;
+  }
+
+  .dropdown-menu2 ul {
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+
+}
+.close-buttonn {
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  color: #333;
+  margin-left: 85%;
+
+  /* Adjust the color as needed */
+}
+.close-button {
+  position: absolute;
+  top: -9.5%;
+  right: 39%;
+  background: none;
+  border: none;
+  font-size: 11px;
+  cursor: pointer;
+  color: #333;
+  /* Adjust the color as needed */
+}
+/* Feedback Popup */
+.reminders-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.reminders-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  /* Adjust as needed */
+}
+
+
+.reminders-content button {
+  padding: 8px 20px;
+  background-color: #c9c9c9;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reminders-content button:hover {
+  background-color: #555;
+}
+
+.reminderLabel {
+  font-size: 20px;
+}
+
+.timeInput {
+  border: 2px solid transparent;
+  width: 7em;
+  height: 2.5em;
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
+  margin: 5px;
+}
+
+.timeInput:hover,
+.timeInput:focus {
+  border: 2px solid #4A9DEC;
+  box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+  background-color: white;
+}
+
+.selectTime {
+  margin: 5px;
+  width: 37%;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+
+.selectElement {
+  margin: 5px;
+  width: 100%;
+  min-width: 15ch;
+  max-width: 30ch;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+.setReminder{
+  font-size: 24px;
+  font-weight: bold;
+}

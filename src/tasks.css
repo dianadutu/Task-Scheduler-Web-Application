@@ -1,0 +1,597 @@
+.task-containers {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 10px;
+    width: 80%;
+    background-color: white;
+    z-index: 0;
+}
+
+/* Container for all task categories */
+.task-categories-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    /* Adjust as needed */
+}
+
+/* Update .task-columns to remove outer margins if they're no longer needed */
+.task-columns {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    /* Optional: adds space between columns */
+    margin: 0;
+    /* Reset margins */
+}
+
+.task-column {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e1e1e1;
+    /* Light grey border for delineation */
+    padding: 10px;
+    width: 300px;
+    transition: transform 0.4s ease;
+    /* Smooth transition for scaling */
+    position: relative;
+    /* Adaugăm position: relative pentru a avea un context pentru poziționarea absolută a butonului */
+}
+
+.delete-column-button {
+    align-self: flex-end;
+    /* Poziționăm butonul în partea din dreapta sus folosind flexbox */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+}
+
+/* Stilurile pentru butonul de adăugare a coloanelor adaptate la efectul specificat */
+.add-column-button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: lightblue;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    /* Reducem dimensiunea fontului */
+    padding: 10px 15px;
+    /* Reducem padding-ul pentru a face butonul mai mic */
+    width: auto;
+    /* Lăsăm butonul să aibă lățimea în funcție de conținut */
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    width: 10%;
+    height: 100%;
+}
+
+.add-column-button::after {
+    content: '+';
+    position: absolute;
+    opacity: 0;
+    top: 70%;
+    left: 45%;
+    transition: 0.3s;
+}
+
+.add-column-button:hover::after {
+    opacity: 1;
+}
+
+.add-column-button:hover {
+    padding-bottom: 30px;
+}
+
+
+.task {
+
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Highlight the active column */
+.active {
+    transform: scale(1.03);
+}
+
+/* Ensure font consistency */
+body,
+button,
+input,
+select,
+h2 {
+    font-family: 'Arial', sans-serif;
+}
+
+.taskInput {
+    width: 100%;
+}
+
+
+.option-button {
+    margin-left: auto;
+    background-color: rgba(239, 239, 239, 0);
+    font-weight: bold;
+    border: white;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.option-menu {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 8px;
+    position: absolute;
+    top: calc(55%+ 5px);
+    right: -60px;
+    z-index: 1;
+}
+
+.option-menu li {
+    cursor: pointer;
+    padding: 8px;
+    transition: background-color 0.4s;
+    background-color: white;
+    position: relative;
+    list-style-type: none;
+
+}
+
+.option-menu li:hover {
+    background-color: #f0f0f0;
+}
+
+.option-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.option-menu ul ul {
+    display: none;
+    border: 1px solid #ccc;
+    position: absolute;
+    left: 80px;
+    top: 0;
+    padding-left: 0;
+    transition-delay: 1s;
+
+}
+
+.option-menu li:hover>ul {
+    display: block;
+}
+
+/* Style for the sub-menu items */
+.option-menu ul ul li {
+    padding: 11px;
+    list-style-type: none;
+}
+
+.priority-circle {
+    width: 10px;
+    /* Adjust the size of the circle */
+    height: 10px;
+    /* Adjust the size of the circle */
+    border-radius: 50%;
+    /* Ensures the element is a circle */
+    margin-right: 5px;
+    /* Add spacing between the circle and the task name */
+}
+
+.low {
+    background-color: green;
+    /* Set the color for low priority */
+}
+
+.medium {
+    background-color: yellow;
+    /* Set the color for medium priority */
+}
+
+.high {
+    background-color: red;
+    /* Set the color for high priority */
+}
+
+.nameandcircle {
+    align-items: center;
+    margin-top: 0;
+    display: flex;
+}
+
+.task-name {
+    margin: 0 0 0 10px;
+}
+
+.task-form-container {
+    display: flex;
+}
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Adjust the gap between input elements if needed */
+}
+
+/* Style for priority buttons */
+.priority-button {
+    flex-grow: 1;
+    /* Distribute available space equally among buttons */
+    margin: 0 5px 15px;
+    /* Add space between buttons */
+}
+
+/* Style for add and cancel buttons */
+.action-buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.category-name-textbox {
+    width: 94%;
+    /* Make sure the input fields take the full width */
+}
+
+.cancel-add-category-button {
+    color: white;
+    background-color: #c9c9c9;
+}
+
+.confirm-add-category-button {
+    background-color: lightblue;
+}
+
+.task-description {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    max-width: 100%;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    width: 40ch;
+}
+
+.task-containers {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 10px;
+    width: 80%;
+    background-color: white;
+    z-index: 0;
+}
+
+/* Container for all task categories */
+.task-categories-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    /* Adjust as needed */
+}
+
+/* Update .task-columns to remove outer margins if they're no longer needed */
+.task-columns {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    /* Optional: adds space between columns */
+    margin: 0;
+    /* Reset margins */
+}
+
+.task-column {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e1e1e1;
+    /* Light grey border for delineation */
+    padding: 10px;
+    width: 300px;
+    transition: transform 0.4s ease;
+    /* Smooth transition for scaling */
+    position: relative;
+    /* Adaugăm position: relative pentru a avea un context pentru poziționarea absolută a butonului */
+}
+
+.delete-column-button {
+    align-self: flex-end;
+    /* Poziționăm butonul în partea din dreapta sus folosind flexbox */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+}
+
+/* Stilurile pentru butonul de adăugare a coloanelor adaptate la efectul specificat */
+.add-column-button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: lightblue;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    /* Reducem dimensiunea fontului */
+    padding: 10px 15px;
+    /* Reducem padding-ul pentru a face butonul mai mic */
+    width: auto;
+    /* Lăsăm butonul să aibă lățimea în funcție de conținut */
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    width: 10%;
+    height: 100%;
+}
+
+.add-column-button::after {
+    content: '+';
+    position: absolute;
+    opacity: 0;
+    top: 70%;
+    left: 45%;
+    transition: 0.3s;
+}
+
+.add-column-button:hover::after {
+    opacity: 1;
+}
+
+.add-column-button:hover {
+    padding-bottom: 30px;
+}
+
+
+.task {
+
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Highlight the active column */
+.active {
+    transform: scale(1.03);
+}
+
+/* Ensure font consistency */
+body,
+button,
+input,
+select,
+h2 {
+    font-family: 'Arial', sans-serif;
+}
+
+.taskInput {
+    width: 100%;
+}
+
+
+.option-button {
+    margin-left: auto;
+    background-color: rgba(239, 239, 239, 0);
+    font-weight: bold;
+    border: white;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.option-menu {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 8px;
+    position: absolute;
+    top: calc(55%+ 5px);
+    right: -60px;
+    z-index: 1;
+}
+
+.option-menu li {
+    cursor: pointer;
+    padding: 8px;
+    transition: background-color 0.4s;
+    background-color: white;
+    position: relative;
+    list-style-type: none;
+
+}
+
+.option-menu li:hover {
+    background-color: #f0f0f0;
+}
+
+.option-menu ul {
+    width: 106%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.option-menu ul ul {
+    display: none;
+    border: 1px solid #ccc;
+    position: absolute;
+    left: 80px;
+    top: 0;
+    padding-left: 0;
+    transition-delay: 1s;
+
+}
+
+.option-menu li:hover>ul {
+    display: block;
+}
+
+/* Style for the sub-menu items */
+.option-menu ul ul li {
+    padding: 11px;
+    list-style-type: none;
+}
+
+.priority-circle {
+    width: 10px;
+    /* Adjust the size of the circle */
+    height: 10px;
+    /* Adjust the size of the circle */
+    border-radius: 50%;
+    /* Ensures the element is a circle */
+    margin-right: 5px;
+    /* Add spacing between the circle and the task name */
+}
+
+.low {
+    background-color: green;
+    /* Set the color for low priority */
+}
+
+.medium {
+    background-color: yellow;
+    /* Set the color for medium priority */
+}
+
+.high {
+    background-color: red;
+    /* Set the color for high priority */
+}
+
+.nameandcircle {
+    align-items: center;
+    margin-top: 0;
+    display: flex;
+}
+
+.task-name {
+    margin: 0 0 0 10px;
+}
+
+.task-form-container {
+    display: flex;
+}
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Adjust the gap between input elements if needed */
+}
+
+/* Style for priority buttons */
+.priority-button {
+    flex-grow: 1;
+    /* Distribute available space equally among buttons */
+    margin: 0 5px 15px;
+    /* Add space between buttons */
+}
+
+/* Style for add and cancel buttons */
+.action-buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.category-name-textbox {
+    width: 94%;
+    /* Make sure the input fields take the full width */
+}
+
+.cancel-add-category-button {
+    color: white;
+    background-color: #c9c9c9;
+}
+
+.confirm-add-category-button {
+    background-color: lightblue;
+}
+
+.task-description {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    max-width: 100%;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    width: 40ch;
+}
+
+.filter-button {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 0%;
+    padding: 8px 16px;
+    width: 34%;
+    border: none;
+    background-color: rgb(201, 201, 201);
+    color: rgb(63, 63, 63);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: width 0.2s ease;
+
+}
+
+.filter-button.clicked {
+    width: 70%;
+}
+
+.dropdown-menu {
+    top: auto;
+    background-color: rgb(201, 201, 201);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    /* Change to 'column' for vertical alignment */
+    position: absolute;
+    /* Set to 'absolute' for proper positioning */
+    padding: 8px 0;
+    /* Add padding to the dropdown menu */
+    z-index: 1;
+
+}
+
+.filterButtons {
+    margin: 5px;
+    padding: 8px 16px;
+    /* Adjust padding for better appearance */
+    border: none;
+    background-color: rgb(201, 201, 201);
+    color: rgb(63, 63, 63);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    /* Align text and arrow vertically */
+}
+
+.filterButtons:hover {
+    background-color: #f0f0f0;
+}

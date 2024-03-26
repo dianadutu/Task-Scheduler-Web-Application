@@ -1,0 +1,47 @@
+/* dropdown.css */
+
+/* Style for the dropdown header */
+.dropdown .dropdown-header {
+
+    padding: 8px;
+    background-color: #e4e4e4;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Style for the "Select an option" text */
+  .dropdown .dropdown-header:empty::before {
+    content: "Select an option";
+    color: #888; /* Change the color as needed */
+  }
+
+
+/* Style for the dropdown list */
+.dropdown .dropdown-list {
+    list-style: none;
+    padding: 0;
+    margin: 5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    border-radius: 10px;
+  }
+  
+  /* Style for each dropdown list item */
+  .dropdown .dropdown-list-item {
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 2px;
+   
+
+  }
+  
+  /*  Hover effect for list items */
+  .dropdown .dropdown-list-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  

@@ -1,0 +1,59 @@
+.theme-popup {
+    position: absolute;
+    background-color: white;
+    z-index: 1000;
+    width: 40%;
+    right: 0;
+    top: 0;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
+
+.theme-content {
+    padding: 30px;
+    flex-direction: column;
+    width: 75%;
+    align-items: center;
+}
+
+.theme-button {
+    margin-top: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 8px 16px;
+    border: none;
+    background-color: rgb(201, 201, 201);
+    color: rgb(63, 63, 63);
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+
+}
+
+.theme-button:hover {
+    background-color: #f0f0f0;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px 16px;
+    border: none;
+    background-color: lightblue;
+    /* Adjust the color as needed */
+    color: #fff;
+    /* Adjust the text color as needed */
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background-color: #0056b3;
+    /* Adjust the hover color as needed */
+}
+
+/* ... (rest of the CSS styles) */
+
+
